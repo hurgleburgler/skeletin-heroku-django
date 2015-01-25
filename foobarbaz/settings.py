@@ -106,3 +106,9 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if True:
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = '/tmp/messages'
+
+DEFAULT_FROM_EMAIL = 'admin@foo.bar'
