@@ -5,7 +5,7 @@ from foobarbaz.views import views
 password_patterns = [
     # Password Reset URLs:
     url(r'^password_reset/$',
-        'django.contrib.auth.views.password_reset',
+        views.password_reset,
         {'post_reset_redirect' : '/accounts/password_reset/mailed/'},
         name="password_reset"),
     url(r'^password_reset/mailed/$',

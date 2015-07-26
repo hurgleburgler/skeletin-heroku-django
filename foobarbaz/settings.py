@@ -106,9 +106,16 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-if True:
-    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-    EMAIL_FILE_PATH = '/tmp/messages'
+# please replace "<sendgrid_username>" and "<sendgrid_password>" with your SendGrid credentials
+SENDGRID_USERNAME = 'bmjen';
+SENDGRID_PASSWORD = 'sEndgr1d4mE';
 
-DEFAULT_FROM_EMAIL = 'admin@foo.bar'
+EMAIL_HOST = 'smtp.sendgrid.net'
+##TO-DO: Pull these from environment variables or a config file
+EMAIL_HOST_USER = 'bmjen'
+EMAIL_HOST_PASSWORD = 'sEndgr1d4mE'
+######
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'admin@foobar.baz'
